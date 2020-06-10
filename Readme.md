@@ -18,6 +18,10 @@ This project contains several small python scripts in the following domains:
  * *usecase-statistics.py*: Parses a catalog of use cases and category definition (category, cluster, and HLUC) and produces statistics with
 the occurrences of category (column Occurrence) and cluster (column ClusterOccurrence) within the use cases in the catalog.
 
+## Version
+
+0.2.0
+
 ## Contact:
 
 Sascha.Holzhauer@uni-kassel.de
