@@ -10,7 +10,10 @@ Welcome to INES-PyTools's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   website
 
+.. toctree::
+   :hidden:
 
 Indices and tables
 ==================
