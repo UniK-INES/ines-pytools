@@ -12,7 +12,8 @@ Welcome to INES-PyTools's documentation!
 
    website
 
-
+.. toctree::
+   :hidden:
 
 Indices and tables
 ==================

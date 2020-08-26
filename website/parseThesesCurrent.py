@@ -24,7 +24,7 @@ import csv
 from operator import itemgetter
 import math
 
-createdate = '2020-01-24'
+createdate = '2020-08-21'
 
 inputFile = '/daten/INES/Außendarstellung/Website/Inhalte/Abschlussarbeiten/' + createdate + '/INES_AbschlussarbeitenLaufend_' + createdate + '.csv'
 outputFile = '/daten/INES/Außendarstellung/Website/Inhalte/Abschlussarbeiten/' + createdate + '/INES_AbschlussarbeitenLaufend_' + createdate + '.html'
@@ -40,19 +40,19 @@ if __name__ == '__main__':
     header = next(reader)
     
     # sort by 'Abschluss' and 'Name'
-    s = sorted(reader, key=lambda d: d[1]+d[2], reverse=False)
-    s = sorted(s, key=lambda d:typesPrio[d[0]])
+    s = sorted(reader, key=lambda d: d[1].strip()+d[2].strip(), reverse=False)
+    s = sorted(s, key=lambda d:typesPrio[d[0].strip()])
     
     # output HTML
     output = open(outputFile, 'w')
     oldtype = ""
 
     for thesis in s:
-        if thesis[0] != oldtype:
-            output.write("<h2>" + types[thesis[0]] + "</h2>\n\n")
-            oldtype = thesis[0]
-        output.write("<p>" + thesis[1] + (", " if len(thesis[2])>0 else "") + thesis[2] + "<br>" + "\n")
-        output.write("<i>" + thesis[3] + "</i></p>\n")
+        if thesis[0].strip() != oldtype:
+            output.write("<h2>" + types[thesis[0].strip()] + "</h2>\n\n")
+            oldtype = thesis[0].strip()
+        output.write("<p>" + thesis[1].strip() + (", " if len(thesis[1].strip())>0 else "") + thesis[2].strip() + "<br>" + "\n")
+        output.write("<i>" + thesis[3].strip() + "</i></p>\n")
           
     output.close()
 print("Done")
